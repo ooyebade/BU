@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+actor Customer #blue
+
+participant Bank
+
+participant CDAccount
+
+->Customer: Check
+activate Customer
+
+Customer -> Bank: Enter Account Information
+activate Bank
+
+Bank --> Customer: Verify Customer Information
+
+skinparam sequenceMessageAlign center
+Customer -> Bank: Check Amount
+
+Bank --> Customer: Display Account
+deactivate Bank
+
+Customer -> CDAccount: View Balance()
+activate CDAccount
+
+CDAccount --> Customer: Display Balance Detail()
+
+Customer -> CDAccount: Insufficient Funds()
+
+Customer -> CDAccount: Check Amount()
+
+Customer -> CDAccount: Withdrawal Amount
+
+Customer -> CDAccount: Store and Check
+deactivate CDAccount
+
+<-Customer: Cash
+deactivate
+
+@enduml

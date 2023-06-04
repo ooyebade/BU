@@ -1,0 +1,28 @@
+@startuml
+
+
+state "Enter Login Details" as login
+[*] --> login
+state "Check Balance" as checkB
+login -right-> checkB : login verified
+state "Display Balance" as displayB
+checkB -right-> displayB: details accessed
+state end2 <<end>>
+displayB -right-> end2: Balance Entered
+state "Initiate Transaction" as transaction
+checkB --> transaction : not check balance
+state "Select Account" as amount
+transaction --> amount : transaction executed
+state "Enter Amount" as entAmount
+amount --> entAmount : account - checking/savings
+state "Get Details" as getDet
+login -----> getDet
+state "Approved" as approve
+getDet -right-> approve : detail accessed
+state "Accept Statement" as acceptState
+approve -right-> acceptState : detail verified
+state "Update Account Details" as update
+acceptState --> update : accepted
+update --> [*]
+
+@enduml

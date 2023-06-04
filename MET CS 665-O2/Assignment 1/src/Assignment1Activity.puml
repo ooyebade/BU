@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+|Customer|
+start
+:Provide Personal Information;
+-[dashed]->
+:Customer Details;
+|Bank|
+-[hidden]->
+split
+:Check Account Information;
+
+
+
+@enduml

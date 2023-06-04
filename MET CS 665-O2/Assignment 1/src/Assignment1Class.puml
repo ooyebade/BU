@@ -1,0 +1,86 @@
+@startuml
+
+
+
+class Bank {
+    Name: string
+    Address: string
+    Balance: int
+    <<create>> ()
+    ViewCustomerDetails ()
+    ViewAccountDetails ()
+}
+
+
+class Address {
+    Street: string
+    City: string
+    State: string
+    Zip: string
+}
+
+class Customer {
+    ID: int
+    Name: string
+    PhoneNo: int
+    Address: string
+    SSN: int
+    Registration ()
+    Enrollment ()
+    OpenAccount ()
+    ViewBalance ()
+    ViewTransactions ()
+    CloseCheckingAccount ()
+    CloseSavingAccount ()
+}
+
+class Account {
+    AccountNo: string
+    AccountType: string
+    AccountBalance: int
+    AccountOwner: string
+    Co-owner: string
+}
+
+class SavingAccount {
+    Rate: float
+    Period: int
+    CashDeposits ()
+    CashWithdrawal ()
+    CheckDeposits ()
+    CheckWithdrawal ()
+    AmountTransferred ()
+}
+
+class CheckingAccount {
+    FreeChecks: int
+    CheckFee: int
+    CashDeposits ()
+    CashWithdrawal ()
+    CheckDeposits ()
+    CheckWithdrawal ()
+    AmountTransferred ()
+}
+
+class CDAccount {
+    CDTerm: float
+    Rate: float
+    MaturingDate: date
+    Worth: float
+}
+
+Bank "1" -right-- "1" Address
+
+Bank "1" -- "0..*" Account : manages
+
+Bank "0..*" -- "0..*" Customer
+Customer "1" -right-- "0..*" Account : has
+
+skinparam groupInheritance 3
+
+Account <|-- SavingAccount
+Account <|-- CheckingAccount
+Account <|-- CDAccount
+
+@enduml
+
