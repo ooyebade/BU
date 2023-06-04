@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!--Meta Info-->
+    <meta charset="UTF-8">
+    <meta name="description" content="BU MET CS601 - Assignment 5">
+    <meta name="keywords" content="BU, MET, CS601, Assignment 5, HTML">
+    <meta name="author" content="Elizabeth Oyebade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Favicon-->
+    <!--Title-->
+    <title>Earned College Degree</title>
+    <!--Stylesheet-->
+    <style>
+        body {
+            width: 100%;
+            background: #A7CFDF;
+            background: -webkit-radial-gradient(circle farthest-side at center center, #A7CFDF 0%, #FFFFFF 50%, #23538A 100%);
+            background: -moz-radial-gradient(circle farthest-side at center center, #A7CFDF 0%, #FFFFFF 50%, #23538A 100%);
+            background: radial-gradient(circle farthest-side at center center, #A7CFDF 0%, #FFFFFF 50%, #23538A 100%);
+        }
+        .college_degree_earned {
+            width: 60%;
+            border: 3px solid black;
+        }
+        .college_degree_earned th, .college_degree_earned td{
+            border: 1px solid black;
+            padding: 2.5px;
+            text-align: center;
+        }
+        .college_degree_earned th {
+            background-color: rgba(136, 17, 136, 0.836);
+            color: black;
+        }
+        .college_degree_earned tr:hover {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="button">Click here to see earned degrees!</button>
+
+    <!--Script-->
+    <script>
+        // handle button onclick actions
+        document.getElementById("button").onclick = () => 
+        {
+            const url = "https://gist.githubusercontent.com/ooyebade/ffc7888d419f4a8aa9c9842c40d1bb7e/raw/830f558ce0c99c50a685f5d63f37e9a574149356/college_degree_earned.json";
+            makeRequest(url);
+        }
+
+        // take the url and create XMLHttpRequest to fetch data
+        function makeRequest(url)
+        {
+            let httpRequest = new XMLHttpRequest();
+            
+            if (!httpRequest) 
+            {
+                alert("Cannot create an XMLHTTP instance");
+                return false;
+            }
+
+            httpRequest.onreadystatechange = function() 
+            {
+                if (httpRequest.readyState === 4 && httpRequest.status === 200)
+                {
+                    let dataObj = JSON.parse(httpRequest.responseText);
+                    let college_degree_earned = dataObj.college_degree_earned;
+
+                    // printLogs(college_degree_earned);
+
+                    // append data in table format
+                    appendData(college_degree_earned);
+                }
+            };
+            httpRequest.open("GET", url, true);
+            httpRequest.send();
+        }
+
+        // append data fetched in table format
+        function appendData(data) 
+        {   
+            // data passed in
+            const degrees = data;
+            // key legends
+            const keys = ["Year conferred", "Type", "School", "Program/Major"];
+
+            // create table properties
+            let table = document.createElement('table');
+            let tableHead = document.createElement('thead');
+            let tableBody = document.createElement('tbody');
+
+            // header row
+            let headerRow = document.createElement('tr');
+            for (let i = 0; i < keys.length; i++) 
+            {
+                let cell = document.createElement('th');
+                cell.appendChild(document.createTextNode(keys[i]));
+                headerRow.appendChild(cell);
+            }
+            tableHead.appendChild(headerRow);
+            table.appendChild(tableHead);
+
+            // body rows
+            degrees.forEach(entry => 
+            {
+                let row = document.createElement('tr');
+                for (let i = 0; i < keys.length; i++) 
+                {
+                    let cell = document.createElement('td');
+                    cell.appendChild(document.createTextNode(entry.degree[keys[i]]));
+                    row.appendChild(cell);
+                }
+                tableBody.appendChild(row);
+            });
+            table.appendChild(tableBody);
+
+            // add table to body
+            table.setAttribute("class", "college_degree_earned");
+            document.body.appendChild(table);
+
+            // hide button
+            document.getElementById("button").style.visibility = 'hidden';
+        };
+
+        // check fetched data using console.log
+        function printLogs(college_degree_earned) 
+        {
+            for (let i = 0; i < college_degree_earned.length; i++) 
+            {
+                console.log(college_degree_earned[i]);
+                console.log(college_degree_earned[i].degree);
+                console.log(college_degree_earned[i].degree["School"]);
+                console.log(college_degree_earned[i].degree["Program/Major"]);
+                console.log(college_degree_earned[i].degree["Type"]);
+                console.log(college_degree_earned[i].degree["Year conferred"]);
+            }
+        }
+    </script>
+</body>
+</html>

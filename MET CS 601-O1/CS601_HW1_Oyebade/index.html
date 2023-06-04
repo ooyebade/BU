@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Info-->
+    <meta charset="UTF-8">
+    <meta name="description" content="BU MET CS601 - Assignment 1">
+    <meta name="keywords" content="BU, MET, CS601, Assignment 1, HTML">
+    <meta name="author" content="Elizabeth Oyebade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Favicon-->
+    <!--Title-->
+    <title>Elizabeth Oyebade :: Biography</title>
+    <!--Stylesheet-->
+    <!--Script-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+  <div id="app">
+    <label>What is your name: </label>
+    <input v-model="name" />
+    <p>Hello, {{name}}</p>
+
+    <label>What is your email: </label>
+    <input v-model="email" />
+    <p>Your email is {{email}}</p>
+
+    <label>What's your gender?</label>
+    <inpit v-model="gender" />
+    <p v-if="male">Male</p>
+    <p v-else="female">Female</p>
+  </div>
+
+  <script>
+    var app = new Vue ({
+      el: "app",
+      data: {
+        name: 'King Kong',
+        email: 'kingkong@bu.edu',
+        male: true,
+        female: true
+      }
+    })
+  </script>
+
+</body>
+</html>

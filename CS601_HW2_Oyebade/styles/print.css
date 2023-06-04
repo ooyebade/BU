@@ -1,0 +1,23 @@
+@media print{
+    /* set the page size and orientation */
+    @page {
+        size: 8.5in 11in;
+        size: portrait;
+        margin: 2cm;
+    }
+
+    header nav, video, audio {
+        display: none;
+    }
+
+    header .header-wrapper .course-title {
+        margin-top: 38px;
+    }
+
+    img {
+        max-width: 8in;
+        max-height: 9.5in;
+        width: auto;
+        height: auto;
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "college_degree_earned": 
+    [
+        {
+            "degree": {
+                "School": "Virginia Commonwealth University",
+                "Program/Major": "Information Systems",
+                "Type": "BS",
+                "Year conferred": "2020"
+            }
+        },
+        {
+            "degree": {
+                "School": "Boston University",
+                "Program/Major": "Software Development",
+                "Type": "MS",
+                "Year conferred": "2023"
+            }
+        }
+    ]
+}

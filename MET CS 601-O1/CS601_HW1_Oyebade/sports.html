@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Info-->
+    <meta charset="UTF-8">
+    <meta name="description" content="BU MET CS601 - Assignment 1">
+    <meta name="keywords" content="BU, MET, CS601, Assignment 1, HTML">
+    <meta name="author" content="Elizabeth Oyebade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Favicon-->
+    <!--Title-->
+    <title>Elizabeth Oyebade :: Sports</title>
+    <!--Stylesheet-->
+    <!--Script-->
+</head>
+
+<body>
+     <!--Page uses the new HTLM5 structures - Requirement #3-->
+
+     <header>
+        <!--Navigation Bar - Requirement #7-->
+        <nav>
+            <a href="index.html">My Biography</a> |
+            <a href="about-me.html">About Me</a> |
+            <a href="sports.html">Sports</a>
+        </nav>
+        <!--(No CSS. Using table to style inline)-->
+        &nbsp;&nbsp;
+        <table>
+            <tr>
+                <!--Image - Requirement #4-->
+                <th><img src="assets/img/BU_wordmark.png" alt="BU logo" height="55"></th>
+                <th><span>&nbsp; BU MET CS601 - Assignment 1: Biography</span></th>
+            </tr>
+        </table>
+        <div class="assignment-1-due-date">
+            This is the <strong>sports</strong> page of <strong>Assignment 1</strong> due <time datetime="2021-05-18T6:00">2021/05/18 6:00AM</time>
+        </div>
+    </header>
+
+    <main>
+        <h1>Sports</h1>
+
+        <section class="intro">
+            <p>
+                I love playing sports. When I was in High School, I was interview by a reporter from <a href="https://www.insidenova.com/sports/stonewalls-elizabeth-oyebade-cant-quit-basketball/article_96206a2e-9ce1-11e5-a759-f798e730dee3.html"
+                target="_blank">InsideNova</a>, which is Northern Virginia's top source for high school sports score, weather alerts and etc.
+            </p>
+        </section>
+
+        <!--Image - Requirement #4-->
+        <!--Video Elements - Requirement #8-->
+        <section class="media">
+            <h2>Photos & Videos</h2>
+
+            <!--(No CSS. Using table to style photos)-->
+            <table>
+                <tr>
+                    <th><strong>Senior Night</strong></th>
+                    <th><strong>Article</strong></th>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <figure>
+                            <img src="assets/img/basketball1.jpg" alt="senior night" width="280" height="372" />
+                            <figcaption>
+                                This poster was made by my teammates for my last game (senior night) in high school. It was an emotional game for everyone especially
+                                the seniors. But although we were emotional, we won the game at the end. 
+                            </figcaption>
+                        </figure>
+                    </td>
+
+                    <td align="center">
+                        <figure>
+                            <img src="assets/img/basketball.jpg" alt="Article" width="280" height="372" />
+                            <figcaption>
+                                This picture was taken when a reporter came to interview during my practice. It was very special to me because it was the first time
+                                I've even been interviewed. They asked me about my basketball career and it was very nice to share that. 
+                            </figcaption>
+                        </figure>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <video controls>
+                            <source src="assets/video/highlights.mp4" type="video/mp4" />
+                            Your browser does not support the video tag!
+                        </video>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <details>
+            <summary> Copyright &copy; 2021 ::: Elizabeth Oyebade</summary>
+            All Rights Reserved. Click <a href="mailto:ooyebade@bu.edu">here</a> to email me <br />
+            Code validated with <a href="https://validator.w3.org/">The WC3 Markup Validation Service</a>.
+        </details>
+    </footer>
+</body>
+</html>
