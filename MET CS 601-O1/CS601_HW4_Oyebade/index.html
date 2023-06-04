@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <!--Meta Info-->
+    <meta charset="UTF-8">
+    <meta name="description" content="BU MET CS601 - Assignment 4">
+    <meta name="keywords" content="BU, MET, CS601, Assignment 4, HTML">
+    <meta name="author" content="Elizabeth Oyebade">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Favicon-->
+    <!--Title-->
+    <title>Elizabeth Oyebade ::: Form Validation and Submission</title>
+    <!--Stylesheet-->
+    <link type="text/css" rel="stylesheet" href="css/stylesheet.css">
+    <!--Script-->
+    <script src="js/validation-form.js"></script>
+</head>
+
+<body>
+    <video autoplay muted loop id="bu-met-video">
+        <source src="video/BU-MET.mp4" type="video/mp4">
+    </video>
+
+   <div class="background-overlay">
+
+       <div class="form-title">BU MET CS601 Ratings Form</div>
+       
+       <form name="elizabeth-oyebade-hw4-form" action="https://bucs601.com/submit.php" onsubmit="return validateInputPass()" method="POST">            
+            <div class="grid-container center" id="form-content">
+                <div class="col-25">
+                    <label for="firstName">First Name: </label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="firstName" name="firstName" placeholder="Your first name" autofocus required>
+                </div>
+
+                <div class="col-26">
+                    <label for="lastName">Last Name: </label>
+                </div>
+                <div class="col-76">
+                    <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                </div>
+
+                <div class="col-27">
+                    <label for="facilitator">Course Facilitator: </label>
+                </div>
+                <div class="col-77">
+                    <input type="text" id="facilitator" name="facilitator" placeholder="Your facilitator's first name" required>
+                </div>
+                
+                <div class="col-28">
+                    <label>How would you rate the overall performance of this class? </label>
+                </div>
+                <div class="col-78">
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="5 Stars">Rocks</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="4 Stars">Pretty Good</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="3 Stars">Meh</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="2 Stars">Kinda Bad</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="1 Stars">Sucks Big Time</label>
+                </div>
+
+                <div class="col-29">
+                    <label>What's your favorite content so far? </label>
+                </div>
+                <div class="col-79">
+                    <input type="checkbox" name="favoriteContent" value="HTML">HTML
+                    <input type="checkbox" name="favoriteContent" value="CSS">CSS<br>
+                    <input type="checkbox" name="favoriteContent" value="JavaScript">JavaScript
+                </div>
+
+                <div class="reset">
+                    <input type="reset" value="Reset">
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+   </div>
+</body>
+</html>

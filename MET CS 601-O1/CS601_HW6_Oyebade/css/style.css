@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Big+Shoulders+Stencil+Display&display=swap');
+
+body {
+    font-family: Big Shoulders Stencil Display;
+    text-align: center;
+    font-size: 36px;
+    background-image: url("../images/img.gif");
+    background-size: contain;
+    color: whitesmoke;
+}
+
+.container {
+    margin: 150px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container .item {
+    padding: 10px;
+    display: block;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+  }
+  .slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+  }
